@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2015 at 10:02 AM
+-- Generation Time: Nov 04, 2015 at 10:20 AM
 -- Server version: 5.0.67-log
 -- PHP Version: 5.3.3
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `xxxx`
+-- Database: `cmsmjc_db1`
 --
 
 -- --------------------------------------------------------
@@ -31,20 +31,20 @@ CREATE TABLE IF NOT EXISTS `movies` (
   `filmCertificate` varchar(5) collate utf8_unicode_ci NOT NULL,
   `filmName` varchar(70) collate utf8_unicode_ci NOT NULL,
   `filmDescription` text collate utf8_unicode_ci NOT NULL,
-  `filmImage` varchar(50) collate utf8_unicode_ci default NULL,
+  `filmImage` varchar(50) collate utf8_unicode_ci NOT NULL,
   `filmPrice` decimal(5,2) NOT NULL,
   `filmReview` int(11) NOT NULL,
   `releaseDate` date NOT NULL,
   PRIMARY KEY  (`filmID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=43 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=46 ;
 
 --
--- Dumping data for table `movies2015`
+-- Dumping data for table `movies`
 --
 
-INSERT INTO `movies2015` (`filmID`, `filmCertificate`, `filmName`, `filmDescription`, `filmImage`, `filmPrice`, `filmReview`, `releaseDate`) VALUES
+INSERT INTO `movies` (`filmID`, `filmCertificate`, `filmName`, `filmDescription`, `filmImage`, `filmPrice`, `filmReview`, `releaseDate`) VALUES
 (1, '15', 'Tropic Thunder', 'A film crew is in Southeast Asia filming a Vietnam-war memoir. It''s early in the shooting, but they''re already behind schedule and over budget. On the day an accident befalls the novice director, the cast and crew are attacked by a gang of poppy-growing local drug dealers, except the cast and crew don''t realize these aren''t actors who are stalking them. The thugs kidnap Tugg Speedman, an actor whose star seems on the decline, and it''s up to the rest of the ragtag team to band together long enough to attempt his rescue. But will Tugg want to leave?', 'tropicThunder.jpg', 3.99, 3, '2008-09-19'),
-(2, 'PG', 'TRON: Legacy', 'Sam Flynn, the tech-savvy 27-year-old son of Kevin Flynn, looks into his father''s disappearance and finds himself pulled into the same world of fierce programs and gladiatorial games where his father has been living for 20 years. Along with Kevin''s loyal confidant, father and son embark on a life-and-death journey across a visually-stunning cyber universe that has become far more advanced and exceedingly dangerous.<script>alert(''hiya - got ya'');</script>', 'tronLegacy.jpg', 1.00, 1, '2010-12-17'),
+(2, 'PG', 'TRON: Legacy', 'Sam Flynn, the tech-savvy 27-year-old son of Kevin Flynn, looks into his father''s disappearance and finds himself pulled into the same world of fierce programs and gladiatorial games where his father has been living for 20 years. Along with Kevin''s loyal confidant, father and son embark on a life-and-death journey across a visually-stunning cyber universe that has become far more advanced and exceedingly dangerous.', 'tronLegacy.jpg', 1.00, 1, '2010-12-17'),
 (3, '12', 'Inception', 'Dom Cobb is a skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state, when the mind is at its most vulnerable. Cobb''s rare ability has made him a coveted player in this treacherous new world of corporate espionage, but it has also made him an international fugitive and cost him everything he has ever loved. Now Cobb is being offered a chance at redemption. One last job could give him his life back but only if he can accomplish the impossible-inception. Instead of the perfect heist, Cobb and his team of specialists have to pull off the reverse: their task is not to steal an idea but to plant one. If they succeed, it could be the perfect crime. But no amount of careful planning or expertise can prepare the team for the dangerous enemy that seems to predict their every move. An enemy that only Cobb could have seen coming.', 'inception.jpg', 2.99, 1, '2010-07-16'),
 (4, '12', 'The Tourist', 'Elise (Angelina Jolie) randomly sits next to an American tourist, Frank (Johnny Depp), on a train going to Venice. The police have been following Elise for two years waiting for her to contact her lover who embezzled over $2 Billion. Not only will they need to evade the police, but also the mobster whose money he stole.', 'theTourist.jpg', 1.99, 1, '2010-12-10'),
 (5, '15', 'The Shawshank Redemption', 'Andy Dufresne is a young and successful banker whose life changes drastically when he is convicted and sentenced to life imprisonment for the murder of his wife and her lover. Set in the 1940''s, the film shows how Andy, with the help of his friend Red, the prison entrepreneur, turns out to be a most unconventional prisoner.', 'shawshankRedemption.jpg', 1.00, 0, '1994-02-17'),
@@ -84,7 +84,10 @@ INSERT INTO `movies2015` (`filmID`, `filmCertificate`, `filmName`, `filmDescript
 (39, '18', 'The Grand Budapest Hotel', 'For the Ralph Fiennes performance alone this is a must see. The film presents something new with each repeat viewing, offering a depth and complexity to every character, every scene; in actual fact every frame is awash with painstaking beauty.', 'grandBudapestHotel.jpg', 4.99, 5, '2014-03-24'),
 (40, 'PG', 'Interstellar ', 'In the near future Earth has been devastated by drought and famine, causing a scarcity in food and extreme changes in climate. When humanity is facing extinction, a mysterious rip in the space-time continuum is discovered, giving mankind the opportunity to widen their lifespan. A group of explorers must travel beyond our solar system in search of a planet that can sustain life. The crew of the Endurance are required to think bigger and go further than any human in history as they embark on an interstellar voyage, into the unknown. However, through the wormhole, one hour is the equivalent of seven years back on Earth, so the mission won''t work if the people on Earth are dead by the time they pull it off. And Coop, the pilot of the Endurance, must decide between seeing his children again and the future of the human race.', 'interstellar.jpg', 15.99, 4, '2014-11-07'),
 (41, '15', 'The Babadook', 'Six years after the violent death of her husband, Amelia is at a loss. She struggles to discipline her ‘out of control'' 6-year-old, Samuel, a son she finds impossible to love. Samuel''s dreams are plagued by a sinister monster he believes is coming to kill them both. When a disturbing storybook called ‘The Babadook'' turns up at their house, Samuel is convinced that the Babadook is the creature he''s been dreaming about. His hallucinations spiral out of control and as he becomes more unpredictable and violent, Amelia is genuinely frightened by her son''s behaviour. But when Amelia begins to see glimpses of a sinister presence all around her, it slowly dawns on her that the thing Samuel has been warning her about may be real', 'babadook.jpg', 15.99, 5, '2014-10-26'),
-(42, '18', 'Gone Girl', 'On the occasion of his fifth wedding anniversary, Nick Dunne reports that his wife, Amy, has gone missing. Under pressure from the police and a growing media frenzy, Nick''s portrait of a blissful union begins to crumble. Soon his lies, deceits and strange behavior have everyone asking the same dark question: Did Nick Dunne kill his wife?', 'goneGirl.jpg', 12.99, 5, '2014-10-03');
+(42, '18', 'Gone Girl', 'On the occasion of his fifth wedding anniversary, Nick Dunne reports that his wife, Amy, has gone missing. Under pressure from the police and a growing media frenzy, Nick''s portrait of a blissful union begins to crumble. Soon his lies, deceits and strange behavior have everyone asking the same dark question: Did Nick Dunne kill his wife?', 'goneGirl.jpg', 12.99, 5, '2014-10-03'),
+(43, '12', 'The Martian', 'During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive.', 'theMartian.jpg', 10.99, 5, '2015-10-02'),
+(44, '12', 'Spectre ', 'A cryptic message from Bond''s past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.', 'spectre.jpg', 10.99, 4, '2015-11-06'),
+(45, '15', 'Steve Jobs', 'Set backstage at three iconic product launches and ending in 1998 with the unveiling of the iMac, Steve Jobs takes us behind the scenes of the digital revolution to paint an intimate portrait of the brilliant man at its epicenter.', 'steveJobs.jpg', 10.99, 5, '2015-11-13');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
