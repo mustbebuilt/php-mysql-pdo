@@ -1,12 +1,13 @@
 <?php
-$hostname = "localhost";
-$username = "xx";
-$password = "xx";
-$database = "xx";
-$mysqli = new mysqli($hostname, $username, $password, $database);
-/* check connection */
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
+$dsn = 'mysql:host=localhost;dbname=xxxx';
+$user = 'xxxx';
+$password = 'xxxx';
+try {
+$pdo = new PDO($dsn, $user, $password);
+$pdo ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$pdo ->exec("SET CHARACTER SET utf8");
+}
+catch (PDOException $e) {
+echo 'Connection failed again: ' . $e->getMessage();
 }
 ?>
