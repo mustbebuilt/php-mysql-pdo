@@ -1,5 +1,11 @@
 <?php
-// connection and query logic
+// add connection file
+$searchTerm = "%".$_GET['filmName']."%";
+$sql= "SELECT * FROM movies WHERE filmName LIKE :filmName";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':filmName', $searchTerm, PDO::PARAM_STR); 
+$stmt->execute();
+$totalnoFilms = $stmt->rowCount();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +16,16 @@
           <title>SEARCH / MULTIPLE RESULTS Query Using a prepare statement</title>
           <link href="css/bootstrap.min.css" rel="stylesheet">
           <link href="css/styles.css" rel="stylesheet">
+		  <style>
+			  .myFlex{
+				  display: flex;
+				  flex-wrap: wrap;
+			  }
+			  .myFlex>div{
+				  flex-basis:25%;
+				  padding:30px;
+			  }
+		  </style>
 </head>
 <body>
 <div class="container">
@@ -44,14 +60,22 @@
 			</div>
 		</form>
 	
-	
-    <div class="row">
-            <div class="col-md-12">
-					          <?php 
-                        // output logic
+    <div class="myFlex">
+            
+					<?php 
+					if($totalnoFilms > 0){
+							while($row = $stmt->fetchObject()){
+								$timestampDate = strtotime($row->releaseDate);
+								$displayDate = date("D d M Y", $timestampDate);
+								echo "<div class=\"\">";
+								echo "<p><img src=\"images/{$row->filmImage}\" class=\"img-responsive center-block img-rounded\"></p>";
+								echo "<h3 class=\"filmTitle\">{$row->filmName} <small>{$row->filmCertificate}</small>";
+								echo "<br><small>{$displayDate}</small></h3>";
+								echo "</div>";
+						}
+					}
                     ?>
             </div>
-    </div>
 </div>
 <footer>
       <div class="container">

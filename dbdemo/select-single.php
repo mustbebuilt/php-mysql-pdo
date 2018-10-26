@@ -7,47 +7,51 @@
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Simple Film By ID</title>
+          <title>Simple Query by FilmID</title>
           <link href="css/bootstrap.min.css" rel="stylesheet">
           <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-   	   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <div class="collapse navbar-collapse" id="myNavbar">
-  		<ul class="nav navbar-nav">
-        	<li><a href="select-single.php">One Result</a></li>
-            <li><a href="select-multiple.php">Mulitple Results</a></li>
-			<li><a href="prepare-single.php">Prepare One Result</a></li>
-            <li><a href="prepare-multiple.php">Prepare Multi Results</a></li>
-  		</ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">PHP/MySQL</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="select-single.php">One Result</a>
+      <a class="nav-item nav-link" href="select-multiple.php">Mulitple Results</a>
+      <a class="nav-item nav-link" href="prepare-single.php">Prepare One Result</a>
+	  <a class="nav-item nav-link" href="prepare-multiple.php">Prepare Multi Results</a>
+    </div>
   </div>
-  </nav>
+</nav>
+
       <div class="page-header">
         <h1>SELECT Query <small>WHERE =</small></h1>
+        <h2>Simple Query by FilmID</h2>
       </div>
     <div class="row">
         <div class="col-md-4">
-        
-        </div>
-   		<div class="col-md-8">   
         <?php
-        // output film Name;
+        // film image here
+        ?>
+        </div>
+   		<div class="col-md-8">
+        <?php
+		    // output film
         ?>
         </div>
     </div>
 </div>
 <footer>
       <div class="container">
-        <p class="text-muted">&copy 2016 mustbebuilt.co.uk</p>
+        <p class="text-muted">&copy 2018 mustbebuilt.co.uk</p>
       </div>
 </footer>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/popper.min.js"></script>
 </body>
 </html>

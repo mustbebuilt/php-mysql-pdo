@@ -13,50 +13,52 @@
 </head>
 <body>
 <div class="container">
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-   	   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-      </button>
-      <div class="collapse navbar-collapse" id="myNavbar">
-  		<ul class="nav navbar-nav">
-        	<li><a href="select-single.php">One Result</a></li>
-            <li><a href="select-multiple.php">Mulitple Results</a></li>
-			<li><a href="prepare-single.php">Prepare One Result</a></li>
-            <li><a href="prepare-multiple.php">Prepare Multi Results</a></li>
-  		</ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.php">PHP/MySQL</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="select-single.php">One Result</a>
+      <a class="nav-item nav-link" href="select-multiple.php">Mulitple Results</a>
+      <a class="nav-item nav-link" href="prepare-single.php">Prepare One Result</a>
+	  <a class="nav-item nav-link" href="prepare-multiple.php">Prepare Multi Results</a>
+    </div>
   </div>
-  </nav>
+</nav>
       <div class="page-header">
         <h1>SEARCH / RESULTS Query <small>Using a prepare statement</small></h1>
       </div>
-    <div class="row">
-        <div class="col-md-12">
-            <form id="form1" name="form1" method="get" action=""class="form-inline">
-             <div class="form-group">
-                    <p><label for="filmID">Film ID</label>: 
-                    <input name="filmID" type="number" id="filmID" class="form-control" >
-                    <input type="submit" name="submit" class="btn btn-default">
-                    </p>
-            </div>
-            </form>
-        </div>
-    </div>
+	
+		<form>
+			<div class="form-group row">
+				<label for="filmID" class="col-md-2 col-form-label">Search by filmID:</label>
+				<div class="col-md-2">
+					<input type="text" class="form-control" id="filmID" name="filmID">
+				</div>
+				<div class="col-md-2">
+					<button type="submit" class="btn btn-primary">Search</button>
+				</div>
+			</div>
+		</form>
+	
+	
     <div class="row">
             <div class="col-md-12">
                     <?php
-                      // search results
+                           // output logic
                     ?>
             </div>
     </div>
 </div>
 <footer>
       <div class="container">
-        <p class="text-muted">&copy 2016 mustbebuilt.co.uk</p>
+        <p class="text-muted">&copy 2018 mustbebuilt.co.uk</p>
       </div>
 </footer>
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/popper.min.js"></script>
 </body>
 </html>
